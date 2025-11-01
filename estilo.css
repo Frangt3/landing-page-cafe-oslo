@@ -1,8 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* ESTILOS */
 
 .contenedor {
   width: 1000px;
-  margin: auto;
+  /* CORRECCIÓN: Centra el contenedor completo */
+  margin: 0 auto;
   font-family: "Open Sans", sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -27,13 +33,14 @@
   --t-claro: #f5f0ed;
   --t-oscuro: #3c3c3b;
 
-  /* TAMAÑOS */
+  /* TAMAÑOS (Versión PC) */
   --n1: 44px;
   --n2: 28px;
   --n3: 24px;
   --t: 16px;
   --boton: 14px;
 
+  /* TAMAÑOS (Versión Móvil) */
   --n1m: 30px;
   --n2m: 24px;
   --n3m: 24px;
@@ -52,7 +59,7 @@ ul {
 .menu {
   display: grid;
   grid-template-columns: 4 auto;
-  align-items: end
+  align-items: end;
 }
 
 .items {
@@ -60,6 +67,9 @@ ul {
   grid-template-columns: repeat(5, max-content);
   gap: 10px;
   padding: 30px;
+}
+.icono {
+    display: none;
 }
 
 .nav {
@@ -73,10 +83,6 @@ ul {
   padding: 10px;
 }
 
-.icono {
-  background-color: var(--rojo);
-  justify-content: end;
-}
 
 .barra {
   background-color: var(--beige);
@@ -111,7 +117,7 @@ ul {
   justify-content: center;
 }
 
-.cuatro .card{
+.cuatro .card {
   display: grid;
   gap: 20px;
   grid-template-columns: min-content minmax(200px, 250px);
@@ -183,11 +189,12 @@ footer {
   text-align: left;
   padding: 20px;
   display: grid;
-  grid-column-start:  span 2;
+
+  grid-column: span 2; 
 }
 
 .recienHecho {
-  background-image: url(Img/Fondo1_2.jpg);
+  background-image: url(img/Fondo1_2.jpg); 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -202,7 +209,7 @@ footer {
 }
 
 .ven {
-  background-image: url(Img/Fondo2.jpg);
+  background-image: url(img/Fondo2.jpg); 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 19%;
@@ -217,22 +224,89 @@ footer {
   margin-top: 20px;
 }
 
-/* posicionamiento para pc*/
-/*
+/* ======================================================= */
+/* MEDIA QUERY para Móviles (Max-width 749px) */
+/* ======================================================= */
 
-*/
-/*para tablet*/
-
-/* @media screen and (max-width: 900px) and (min-width: 749.99px) {
+@media screen and (max-width: 749px) {
   
+  /* 1. LAYOUT PRINCIPAL */
+  .contenedor {
+    width: 100%;
+    display: block; 
+    margin: 0;
+  }
+  
+  /* 2. ENCABEZADOS Y TEXTOS */
+  .n1 {
+    font-size: var(--n1m);
+  }
+  
+  .n2 {
+    font-size: var(--n2m);
+  }
+  
+  .texto {
+    font-size: var(--tm);
+  }
 
-} */
+  /* 3. NAVEGACIÓN (Menú Hamburguesa) */
+  .menu {
+    /* El icono de hamburguesa se basa en Flexbox */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .items {
+    /* Ocultar elementos del menú para el modo móvil */
+    display: none;
+  }
+  
+  .icono {
+    /* Mostrar icono de hamburguesa */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  
+  .barra {
+    /* Diseño de las barras del icono */
+    width: 100%;
+    height: 4px;
+    background-color: var(--blanco);
+  }
+  
+  /* 4. SECCIONES PRINCIPALES */
+  .recienHecho {
+    height: 350px; 
+    background-position: center;
+  }
+  
+  .brunch, .celebra, .contacta, .dondeEstamos, .ven {
+    padding: 30px 20px;
+  }
 
-/*para móviles*/
-/*
-@media screen and (max-width: 749.99px) {
+  /* 5. SECCIÓN CUATRO (Tarjetas 1 columna) */
+  .cuatro {
+    padding: 40px 10px;
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+  
+  .cuatro .card {
+    grid-template-columns: 80px 1fr; 
+    padding: 0 10px;
+    gap: 15px;
+  }
 
-
-
+  /* 6. PIE DE PÁGINA */
+  footer {
+    text-align: center;
+  }
 }
-*/
