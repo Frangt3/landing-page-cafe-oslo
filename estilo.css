@@ -1,0 +1,238 @@
+/* ESTILOS */
+
+.contenedor {
+  width: 1000px;
+  margin: auto;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 500px 300px 400px auto 300px 100px;
+  grid-template-areas:
+    "recienHecho recienHecho"
+    "brunch celebra"
+    "ven ven"
+    "cuatro cuatro"
+    "contacta sabes"
+    "footer footer";
+  text-align: center;
+}
+
+:root {
+  --rojo: #d03b40;
+  --beige: #ded6c0;
+  --blanco: #f5f0ed;
+  --gris: #241d1b;
+  --negro: #251d1b;
+
+  --t-claro: #f5f0ed;
+  --t-oscuro: #3c3c3b;
+
+  /* TAMAÑOS */
+  --n1: 44px;
+  --n2: 28px;
+  --n3: 24px;
+  --t: 16px;
+  --boton: 14px;
+
+  --n1m: 30px;
+  --n2m: 24px;
+  --n3m: 24px;
+  --tm: 16px;
+  --botonm: 14px;
+}
+
+/*colores y textos*/
+ol,
+ul {
+  list-style: none;
+  display: grid;
+  justify-content: end;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 4 auto;
+  align-items: end
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  gap: 10px;
+  padding: 30px;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.logo {
+  display: grid;
+  justify-content: start;
+  padding: 10px;
+}
+
+.icono {
+  background-color: var(--rojo);
+  justify-content: end;
+}
+
+.barra {
+  background-color: var(--beige);
+  border-radius: 50px;
+}
+
+.brunch,
+.dondeEstamos {
+  background-color: var(--rojo);
+  padding: 40px;
+}
+
+.celebra,
+.contacta {
+  background-color: var(--beige);
+  padding: 40px;
+}
+
+.texto {
+  color: var(--blanco);
+  font-size: 16px;
+}
+
+.cuatro {
+  background-color: var(--blanco);
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(2, max-content);
+  padding: 80px 20px;
+  gap: 50px;
+  justify-content: center;
+}
+
+.cuatro .card{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: min-content minmax(200px, 250px);
+  align-items: center;
+}
+
+
+.n2 {
+  font-size: var(--n2);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--blanco);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.span-red {
+  color: var(--rojo);
+}
+
+.item {
+  color: var(--blanco);
+  font-size: var(--t);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.n1 {
+  font-size: var(--n1);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--blanco);
+  text-align: center;
+}
+
+.img {
+  background-size: contain;
+}
+
+.texto-card {
+  color: var(--gris);
+  text-align: left;
+}
+
+.texto-card-titulo {
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.contacta .n2 {
+  color: var(--rojo);
+}
+
+.contacta .texto {
+  color: var(--rojo);
+}
+
+.dondeEstamos .n2,
+.dondeEstamos .texto {
+  color: var(--beige);
+}
+
+.contacta .texto {
+  margin-top: 23px;
+}
+
+footer {
+  background-color: var(--negro);
+  text-align: left;
+  padding: 20px;
+  display: grid;
+  grid-column-start:  span 2;
+}
+
+.recienHecho {
+  background-image: url(Img/Fondo1_2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100vh;
+  overflow: hidden;
+  grid-column-start: span 2;
+  text-align: center;
+}
+
+.recien {
+  padding: 55px;
+}
+
+.ven {
+  background-image: url(Img/Fondo2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 19%;
+  grid-column-start: span 2;
+  padding: 40px;
+}
+
+.boton {
+  background-color: transparent;
+  border: 2px solid var(--blanco);
+  color: var(--blanco);
+  margin-top: 20px;
+}
+
+/* posicionamiento para pc*/
+/*
+
+*/
+/*para tablet*/
+
+/* @media screen and (max-width: 900px) and (min-width: 749.99px) {
+  
+
+} */
+
+/*para móviles*/
+/*
+@media screen and (max-width: 749.99px) {
+
+
+
+}
+*/
